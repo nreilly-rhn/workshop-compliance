@@ -18,18 +18,18 @@
         dest: "./oscap-report-{{ ansible_nodename }}-{{ v_stage }}.html"
         flat: true
 
-    - name: copy report to bastion 
-      ansible.builtin.copy:
-        src: "./oscap-report-{{ ansible_nodename }}-{{ v_stage }}.html"
-        dest: "/home/{{ v_bastion_user }}/"
-      delegate_to: bastion.9s6m5.sandbox2962.opentlc.com
-      vars:
-        ansible_port: "{{ v_bastion_port }}"
-        ansible_user: "{{ v_bastion_user }}"
-        ansible_ssh_pass: "{{ v_bastion_pass }}"
-        ansible_become_pass: "{{ v_bastion_pass }}"
+#    - name: copy report to bastion 
+#      ansible.builtin.copy:
+#        src: "./oscap-report-{{ ansible_nodename }}-{{ v_stage }}.html"
+#        dest: "/home/{{ v_bastion_user }}/"
+#      delegate_to: bastion.9s6m5.sandbox2962.opentlc.com
+#      vars:
+#        ansible_port: "{{ v_bastion_port }}"
+#        ansible_user: "{{ v_bastion_user }}"
+#        ansible_ssh_pass: "{{ v_bastion_pass }}"
+#        ansible_become_pass: "{{ v_bastion_pass }}"
 
-    - ansible.builtin.file:
-        path: "./oscap-report-{{ ansible_nodename }}-{{ v_stage }}.html"
-        state: absent
+#    - ansible.builtin.file:
+#        path: "./oscap-report-{{ ansible_nodename }}-{{ v_stage }}.html"
+#        state: absent
 
