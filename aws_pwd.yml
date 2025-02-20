@@ -1,0 +1,5 @@
+---
+- name: Apply CIS Benchmark security/compliance hardenning to the NEW RHEL 9 VM 
+  hosts: all
+  become: true
+  become_method: sudo
