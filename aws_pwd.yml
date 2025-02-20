@@ -8,4 +8,4 @@
     - name: set password for ec2-user
       ansible.builtin.user:
         name: ec2-user
-        password: redhat!23
+        password: "{{ redhat!23|password_hash('sha512') }}"
