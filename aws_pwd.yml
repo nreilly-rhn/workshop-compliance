@@ -13,4 +13,4 @@
         path: /etc/sudoers.d/90-cloud-init-users
         marker: "# {mark} ANSIBLE MANAGED BLOCK"
         block: |
-          ec2-user ALL=(ALL)
+          ec2-user ALL=(ALL)	ALL
