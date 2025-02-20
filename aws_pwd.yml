@@ -3,9 +3,14 @@
   hosts: all
   become: true
   become_method: sudo
-
   tasks: 
     - name: set password for ec2-user
       ansible.builtin.user:
         name: ec2-user
         password: "{{ ec2_password|password_hash('sha512') }}"
+    - name: Update clout-init generated sudoers
+      ansible.builtin.blockinfile:
+        path: /etc/sudoers.d/90-cloud-init-users
+        marker: "# {mark} ANSIBLE MANAGED BLOCK"
+        block: |
+          ec2-user ALL=(ALL)
