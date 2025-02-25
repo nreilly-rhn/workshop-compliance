@@ -14,3 +14,10 @@
         marker: "# {mark} ANSIBLE MANAGED BLOCK"
         block: |
           ec2-user ALL=(ALL)	ALL
+
+    - name: Update authorised_keys
+      ansible.builtin.blockinfile:
+        path: /home/ec2-user/.ssh/authorized_keys
+        marker: "# {mark} ANSIBLE MANAGED KEYS"
+        block: |
+          ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHifDabwcFZc9n2lXRU0PLKx32nwuCu+0UiQVxQo3r71 brosenbe EdDSA
