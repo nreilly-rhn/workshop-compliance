@@ -18,5 +18,5 @@
     - name: Copy rsyslog config
       ansible.builtin.copy:
         src: "31-aap.conf"
-        path: "/etc/rsyslog.d/31-aap.conf"
+        dest: "/etc/rsyslog.d/31-aap.conf"
         mode: "0644"
