@@ -20,3 +20,8 @@
         src: "31-aap.conf"
         dest: "/etc/rsyslog.d/31-aap.conf"
         mode: "0644"
+    - name: Restart service rsyslog
+      ansible.builtin.systemd_service:
+        state: restarted
+        daemon_reload: true
+        name: rsyslog
